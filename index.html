@@ -213,7 +213,7 @@
             </label>
         </div>
 
-        <button class="submit-btn" type="submit">Submit Vote</button>
+        <button class="submit-btn" type="submit">Submit Vote ✅</button>
     </form>
 </div>
 
@@ -224,7 +224,7 @@
 </div>
 
 <script>
-const startTime = new Date("2025-12-14T07:00:00").getTime();
+const startTime = new Date("2025-12-12T07:00:00").getTime();
 const endTime   = new Date("2025-12-14T23:59:00").getTime();
 
 const countdownPage = document.getElementById("countdownPage");
@@ -440,7 +440,7 @@ function validateAccess() {
 
     if (!name) { error.textContent = "Please select a name."; return; }
     if (code.length !== 4) { error.textContent = "Enter a 4-digit code."; return; }
-    if (validCodes[name] !== code) { error.textContent = "Invalid access code!"; return; }
+    if (validCodes[name] !== code) { error.textContent = "Invalid access code!👎😒"; return; }
 
     verified = true;
     document.getElementById("verifiedName").value = name;
@@ -455,8 +455,8 @@ document.getElementById("voteForm").addEventListener("submit", async function (e
     const president = document.querySelector("input[name='PresidentVote']:checked");
     const secretary = document.querySelector("input[name='SecretaryVote']:checked");
 
-    if (!president) return alert("Please select a President Member.");
-    if (!secretary) return alert("Please select a Secretary Member.");
+    if (!president) return alert("Please select a President Member.🤔");
+    if (!secretary) return alert("Please select a Secretary Member.🤔");
 
     if (!confirm(
         "Confirm Vote:\n\nPresident: " + president.value +
@@ -472,7 +472,7 @@ document.getElementById("voteForm").addEventListener("submit", async function (e
             "https://script.google.com/macros/s/AKfycbysp2_DQlc5RhPR9KMSwvG91GveNxGg5V3dRKfIxIR5gLK8iZ_VbxlcXHJ2ZC_vSi2GCQ/exec",
             { method: "POST", body: formData }
         );
-        alert("Thank you! Your vote has been submitted.");
+        alert("Thank you! Your vote has been submitted.🤗");
         verified = false;
         votingPage.classList.add("hidden");
         verifyPage.classList.remove("hidden");
